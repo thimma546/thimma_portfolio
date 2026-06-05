@@ -27,12 +27,14 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
+            padding-top: 70px; /* Prevents header from covering hero content */
         }
 
         /* Navigation */
         header {
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
             background-color: rgba(15, 23, 42, 0.9);
             backdrop-filter: blur(10px);
@@ -77,9 +79,10 @@
 
         /* Sections Common */
         section {
-            padding: 6rem 2rem 4rem 2rem;
+            padding: 4rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
+            min-height: auto;
         }
 
         .section-title {
@@ -101,15 +104,15 @@
 
         /* Hero Section */
         #hero {
-            min-height: 100vh;
+            min-height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
-            padding-top: 0;
         }
 
         .hero-badge {
+            display: inline-block;
             background: rgba(56, 189, 248, 0.1);
             color: var(--primary);
             padding: 0.5rem 1rem;
@@ -124,6 +127,7 @@
             font-size: 4rem;
             line-height: 1.1;
             margin-bottom: 1rem;
+            color: var(--text-main);
         }
 
         #hero h2 {
@@ -140,6 +144,7 @@
         }
 
         .cta-btn {
+            display: inline-block;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: #fff;
             padding: 0.8rem 2rem;
@@ -186,6 +191,7 @@
             border-radius: 4px;
             font-size: 0.9rem;
             border: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
         }
 
         /* Projects */
@@ -232,3 +238,199 @@
             border-radius: 4px;
             color: var(--primary);
         }
+
+        /* Contact Section */
+        #contact {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-container {
+            background-color: var(--card-bg);
+            padding: 3rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .contact-link:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 4rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #hero h1 { font-size: 2.5rem; }
+            #hero h2 { font-size: 1.4rem; }
+            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .nav-links { display: none; } 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">THIMMARAJU</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About & Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="hero-badge">ECE Final Year Student</div>
+        <h1>Hi, I'm Thimmaraju.</h1>
+        <h2>Bridging Hardware Excellence & Software Logic</h2>
+        <p>An Electronics and Communication Engineering student with a strong command over core hardware domains, excellent programming skills, and the communication clarity needed to lead technical initiatives.</p>
+        <a href="#contact" class="cta-btn">Let's Connect</a>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">About & Technical Strengths</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <h3>Who I Am</h3>
+                <p style="color: var(--text-muted); margin-top: 1rem;">
+                    Currently pursuing my final year in Electronics and Communication Engineering, I have built a solid foundation where hardware meets software. My true asset lies in translating complex architectural requirements into optimized code.
+                </p>
+                <p style="color: var(--text-muted); margin-top: 1rem;">
+                    Beyond my technical toolkit, my strong communication skills allow me to collaborate effectively across cross-functional teams, present ideas distinctively, and manage engineering tasks efficiently.
+                </p>
+            </div>
+            
+            <div class="skills-container">
+                <div class="skill-group">
+                    <h4>ECE Core Strengths</h4>
+                    <div class="skill-tags">
+                        <span class="tag">Embedded Systems</span>
+                        <span class="tag">Microcontrollers (8051, ARM)</span>
+                        <span class="tag">VLSI Design</span>
+                        <span class="tag">Signal Processing</span>
+                        <span class="tag">IoT Architecture</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h4>Coding & Software</h4>
+                    <div class="skill-tags">
+                        <span class="tag">C / C++</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Data Structures & Algos</span>
+                        <span class="tag">MATLAB</span>
+                        <span class="tag">Verilog / VHDL</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h4>Interpersonal & Professional</h4>
+                    <div class="skill-tags">
+                        <span class="tag">Technical Presentations</span>
+                        <span class="tag">Team Leadership</span>
+                        <span class="tag">Technical Writing</span>
+                        <span class="tag">Problem Solving</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="project-grid">
+            
+            <div class="project-card">
+                <h3>Smart IoT Monitoring System</h3>
+                <p>Designed and deployed an integrated embedded framework that captures environmental real-time data using custom microcontrollers, delivering automated responses through low-latency firmware optimization.</p>
+                <div class="project-tech">
+                    <span>Embedded C</span>
+                    <span>Microcontrollers</span>
+                    <span>IoT Protocol</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Optimized VLSI Architecture Design</h3>
+                <p>Implemented and simulated an optimized digital system component utilizing Verilog to enhance gate-level processing efficiency, ensuring minimal power consumption and reduced propagation delay.</p>
+                <div class="project-tech">
+                    <span>Verilog HDL</span>
+                    <span>Xilinx</span>
+                    <span>Digital Logic</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Algorithmic Network Analyzer</h3>
+                <p>Developed a high-efficiency software tool written in C++ that processes and identifies signal routing paths within simulated networks using advanced graph-based data structures.</p>
+                <div class="project-tech">
+                    <span>C++</span>
+                    <span>Data Structures</span>
+                    <span>Signal Logic</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                I am actively seeking full-time opportunities, graduate positions, or collaborative engineering projects where I can apply my dual-domain expertise.
+            </p>
+            <div class="contact-methods">
+                <a href="mailto:thimmaraju@email.com" class="contact-link">thimmaraju@email.com</a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank" class="contact-link">LinkedIn Profile</a>
+                <a href="https://github.com/yourusername" target="_blank" class="contact-link">GitHub Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Thimmaraju. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
